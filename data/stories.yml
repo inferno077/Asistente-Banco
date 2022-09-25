@@ -1,0 +1,68 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_esperar_representante
+  - intent: mood_great
+  - action: utter_saludo_representante
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: tarjeta perdida
+  steps:
+    - intent: tarjeta_perdida
+    - action: utter_tarjeta_perdida
+
+- story: solicitar tarjeta
+  steps:
+    - intent: solicitar_tarjeta
+    - action: utter_solicitar_edad
+    - intent: edad_usuario
+    - action: action_edad ## q no sean tan igualess
+    - action: utter_transaccion_confirmada
+    - action: utter_desea_continuar_tramites
+
+- story: datos resicencia
+  steps:
+   - intent: retirar_tarjeta           #donde puedo retirar la tjta
+   - action: utter_solicitar_ciudad    #de donde sos?
+   - intent: ciudad_banco
+   - action: action_ciudad_residencia  #guarda el slot ciudad
+
+
+- story: datos banco
+  steps:
+   
+   - action: utter_solicitar_banco #que banco perteneces
+   - intent: banco_afiliado #soy del [banco patagonia](banco)
+   - action: action_banco_afiliado  # guardo el slot del banco
+
+- story: informacion horarios_sucursal
+  steps:  
+   - intent: horario_tarde # bien.. las sucursales disponibles ,en la (ciudad) del (banco)
+   - action: action_horarios_tarde #le da la info 
+   - action: utter_great

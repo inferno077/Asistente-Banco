@@ -1,0 +1,97 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - tarjeta_perdida
+  - solicitar_tarjeta
+  - edad_usuario
+  - banco_afiliado
+  - ciudad_banco
+  - retirar_tarjeta
+  - horario_tarde 
+  #- esperar_representante
+  #- nombre_y_dni
+
+entities:
+  - anios  
+  - banco
+  - ciudad
+
+actions:
+  - action_edad    
+  - action_ciudad_residencia
+  - action_banco_afiliado
+  - action_horarios_tarde
+#-action_brindar_nombre_y_dni
+slots:
+  slot_ciudad:
+   type: text
+    - type: from_entity
+      entity: ciudad
+
+  slot_bank:
+   type: text
+    - type: from_entity
+      entity: banco
+   
+  time:
+   type: text   
+
+responses:
+  utter_greet:
+  - text: "Hola! Gracias por haberte comunicado por nuesta web del banco Santander Rio" 
+
+  utter_esperar_representante:
+  - text: "A continuacion uno de nuestros representantes lo guiaran en sus tramites y consultas"
+
+  utter_saludo_representante:
+  - text: "Hola buenos dias soy Alice , un gusto!. En que puedo ayudarle?"
+  - text: "Hola buenos dias soy Grace !. En que puedo ayudarte?"
+  - text: "EDUUUAAAAARDOOOOOOO!!! VENI A BUSCAR A JUUUAAN CRUUUUUZ !!!!!!"
+
+  utter_cheer_up:
+  - text: "Quizas esto te alegre el dia" #"Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Esto te ah ayudado?"
+
+  utter_happy:
+  - text: "Genial, sigue asi!" #"Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye baby, byee! :("
+  - text: "Manejate!!"
+  - text: "Hace lo que quieras!!!"
+
+  utter_iamabot:
+  - text: "Soy Alice y fui desarrollada por Mariano Hiese"
+
+  utter_tarjeta_perdida:
+  - text: "Por favor, acercate a nuestra sucursal mas cercana a tu domicilio !"
+
+  utter_solicitar_edad:
+  - text: "Puedes decirme que edad tienes ?"
+
+  utter_solicitar_ciudad:
+  - text: "Puede decirme la ciudad en la que reside?"
+  
+  utter_solicitar_banco:
+  - text: "A que banco pertenece?"
+  
+  utter_transaccion_confirmada:
+  - text: "Gracias por la espera !!Pudimos tramitar su consulta exitosamente. Tienes otra consulta ?"
+  utter_desea_continuar_tramites:
+  - text: "Si lo deseas puedes seguir consultando o vuelve cuando quierasa , trabajamos 24/7 :|"
+   
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

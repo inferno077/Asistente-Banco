@@ -1,0 +1,223 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hola
+    - que tal
+    - todo bien?
+    - como andas ?
+    - como estas?
+    - que haces
+    - hola que haces
+    - que onda
+    - kiii haceee
+    - keh hacee
+    
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nos vimos prro
+    - neh deja 
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - ok
+    - buenisimo
+    - bueno gracias
+    - esta bien
+    - de acuerdo
+    - no hay apuro
+    - buenisimo gracias
+    - bueno espero
+    
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - me siento mal
+    - estoy triste
+    
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+- intent: mood_rage
+  examples: |
+    - proximamente las puteadas estaran disponibles
+    - te odio
+    - ya te voy a encontrar
+    - que bot pelotudo
+    - que ganas de romper las guindas
+  
+- intent: tarjeta_perdida
+  examples: |
+    -perdi mi tarjeta
+    -tarjeta perdida
+    -como recupero mi tarjeta
+    -quiero la reposicion de mi tarjeta
+    -quiero una nueva tarjeta
+    -ayuda perdi mi tarjeta
+
+- intent: solicitar_tarjeta
+  examples: |
+    -necesito una extension de tarjeta
+    -quisiera solicitar extension de tarjeta
+    -Hola, quisiera solicitar extension de tarjeta
+    -Hola, quiero solicitar extension de tarjeta
+    -quiero una extension
+    -quiero una extension de tarjeta
+    -extension de tarjeta
+    -pedir una extension de tarjeta
+    -solicitar extension de tarjeta
+    -solicitar extension
+    -nueva extension de tarjeta
+    -nueva extension
+    -otra extension
+    -otra extension de tarjeta   
+    -si quisiera hacer una extencion de mi tarjeta 
+    
+- intent: edad_usuario
+  examples: |
+    -tengo [18](anios)
+    -[18](anios) anios
+    -[17](anios)
+    -yo tengo [27](anios)
+    -[24](anios) recien cumplidos
+    -recien cumpli [14](anios)
+    -el mes que viene cumplo [22](anios)
+    -cumplire [55](anios)
+    -en unos dias cumplire [55](anios)
+    -dentro de poco cumplire [55](anios)
+    -voy a cumplir [30](anios)
+    -voy a cumplir dentro de poco [30](anios)
+    -si, tengo [25](anios)
+# mi nombre es Pepito Flores y mi dni es 54323095
+- regex: anios
+  examples: |
+   - ([0-9]{2,3})  
+
+- intent: banco_afiliado
+   examples: |
+   -afiliado del[Santander Rio](banco)
+   -soy del [Banco Provincia](banco)
+   -Soy del [HSBC](banco)
+   -tengo cuenta en el [Banelco](banco)
+   -tengo la cuenta en el banco [Frances](banco)
+   -[Santander](banco)
+   -[banco Nacion](banco)
+- regex : banco
+  examples: |
+   -((([aA-zZ]\w+ *){1,})+( )*){1,}   
+
+- intent: retirar_tarjeta
+   examples: |
+   -donde retiro mi tarjeta ?
+   -donde puedo retirar mi tarjeta ?
+   -donde debo retirar mi tarjeta de credito?
+   -donde puedo retirar mi tarjeta de debito 
+   -en que sucursal puedo retirar mi tarjeta
+   -donde busco mi tarjeta de credito
+   -donde busco mi tarjeta de debito
+   -buen dia , donde puedo retirar mi tarjeta 
+   -buen dia donde puedo buscar mi tarjeta 
+
+- intent: ciudad_banco
+  examples: |
+    -vivo en [Tandil](ciudad)
+    -vivo en [Olavarria](ciudad)
+    -vivo en [Azul](ciudad)
+    -soy de [Salta](ciudad)
+    -soy de [CABA](ciudad)
+    -de [Tandil](ciudad)
+    -de [Bolivar](ciudad)
+    -de [Jujuy](ciudad)
+    -radicado en [Coronel Pringles](ciudad)
+    -radicado en [Olavarria](ciudad)
+    -viviendo en [buenos aires](ciudad)
+- regex : ciudad
+  examples: |
+   -((([aA-zZ]\w+ *){1,})+( )*){1,} 
+
+- intent: horario_tarde
+   examples: |
+   -puedo retirarlo de tarde
+   -puedo de tarde
+   -de tarde
+   -de tarde en lo posible
+   -solo puedo de tarde
+   -que horarios de tarde hay disponibles ?
+   -atienden de tarde ?
